@@ -2,7 +2,6 @@ import { HiOfficeBuilding, HiLocationMarker } from "react-icons/hi";
 import { IoMdPricetag, IoMdPricetags, IoIosHappy } from "react-icons/io";
 import { MdStars } from "react-icons/md";
 import { FaHotel } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -34,7 +33,7 @@ export default function Hero() {
       </div>
 
       <div className="location-details container relative">
-        <CurrnetLocation />
+        <CurrentLocation />
 
         <div className="search-widget">
           <div className="col">
@@ -110,7 +109,7 @@ const HeroWidget = ({
   );
 };
 
-const CurrnetLocation = () => {
+const CurrentLocation = () => {
   return (
     <div className="current-marker">
       <div className="location-marker">

@@ -3,20 +3,15 @@ import { Button } from "./Button";
 import { Card } from "./Card";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { useAnimation, motion } from "framer-motion";
 
 export const Facilities = () => {
   const { ref, inView, entry } = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
-  const animation = useAnimation();
   useEffect(() => {
     if (inView) {
-      animation.start({
-        opacity: 1,
-        y: 0,
-      });
+      console.log("facilities in view");
     }
   }, [inView]);
 
@@ -49,11 +44,7 @@ export const Facilities = () => {
 
   return (
     <section className="facilities" ref={ref}>
-      <motion.div
-        className="container"
-        initial={{ opacity: 0, y: 100 }}
-        animate={animation}
-      >
+      <div className="container">
         <div className="section-content">
           <ChipText text="Public Facilities" />
           <h3 className="heading">Various Kinds of Facilities</h3>
@@ -69,7 +60,7 @@ export const Facilities = () => {
             <Card key={i} {...itm} isminicard={true} />
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

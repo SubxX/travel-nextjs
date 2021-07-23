@@ -4,30 +4,21 @@ import { ChipText } from "./ChipText";
 import { Button } from "./Button";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { useAnimation, motion } from "framer-motion";
 
 export const OurCompany = () => {
   const { ref, inView, entry } = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
-  const animation = useAnimation();
   useEffect(() => {
     if (inView) {
-      animation.start({
-        opacity: 1,
-        y: 0,
-      });
+      console.log("our-company-section in view");
     }
   }, [inView]);
 
   return (
     <section className="our-company-section" ref={ref}>
-      <motion.div
-        className="container company-preview"
-        initial={{ opacity: 0, y: 100 }}
-        animate={animation}
-      >
+      <div className="container company-preview">
         <div className="left-side relative">
           <Image
             src="/our-company.jpg"
@@ -49,7 +40,7 @@ export const OurCompany = () => {
           </p>
           <Button type="filled" text="Read more"></Button>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
