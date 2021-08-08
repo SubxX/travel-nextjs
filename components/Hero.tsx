@@ -2,8 +2,30 @@ import { HiOfficeBuilding, HiLocationMarker } from "react-icons/hi";
 import { IoMdPricetag, IoMdPricetags, IoIosHappy } from "react-icons/io";
 import { MdStars } from "react-icons/md";
 import { FaHotel } from "react-icons/fa";
+import { useEffect } from "react";
+import { gsap } from "gsap";
 
 export default function Hero() {
+  // useEffect(() => {
+  //   const tl = gsap.timeline();
+  //   tl.fromTo(
+  //     "#hero .hero-video",
+  //     { width: 0 },
+  //     { width: "50%", ease: "Expo.easeInOut", duration: 1.8 }
+  //   );
+  //   tl.fromTo(
+  //     "#hero .hero-content > *",
+  //     { autoAlpha: 0, y: 10 },
+  //     { autoAlpha: 1, y: 0, stagger: 0.5 }
+  //   );
+  //   tl.fromTo(
+  //     "#hero .location-details",
+  //     { autoAlpha: 0, y: 20 },
+  //     { autoAlpha: 1, y: 0 }
+  //   );
+  //   tl.fromTo("nav", { top: -100 }, { top: 0 });
+  // }, []);
+
   return (
     <section id="hero">
       <div className="container hero-container">
